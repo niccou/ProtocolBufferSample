@@ -1,0 +1,45 @@
+package DataTransferObjectLibrary;
+
+import "descriptor.proto";
+
+option optimize_for = SPEED;
+
+message Person
+{
+	optional int32 Id = 1 [default = -1];
+	required string FirstName = 2;
+	required string LastName = 3;
+	repeated PhoneNumber Phones = 4;
+	optional string Email = 5;
+	optional DateTime BirthDate = 6;
+}
+
+message PhoneNumber
+{
+	required string Number = 1;
+	
+	enum PhoneType
+	{
+		PROFESIONNAL        = 1;
+		HOME                = 2;
+		MOBILE              = 3;
+	};
+
+	required PhoneType Type = 2;
+}
+
+message DateTime
+{
+	required int32 Year = 1;
+	required int32 Month = 2;
+	required int32 Day = 3;
+	optional int32 Hour = 4;
+	optional int32 Minute = 5;
+	optional int32 Second = 6;
+	optional int32 Millisecond = 7;
+}
+
+message ListOfPerson
+{
+	repeated Person PersonList = 1;
+}
