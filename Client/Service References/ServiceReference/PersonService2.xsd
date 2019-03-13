@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/DataTransferObjectLibrary" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/DataTransferObjectLibrary" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:22870/PersonService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="Person">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element name="FirstName" nillable="true" type="xs:string" />
+      <xs:element name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Phones" nillable="true" type="tns:ArrayOfPhoneNumber" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BirthDate" nillable="true" type="tns:DateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Person" nillable="true" type="tns:Person" />
+  <xs:complexType name="ArrayOfPhoneNumber">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PhoneNumber" nillable="true" type="tns:PhoneNumber" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPhoneNumber" nillable="true" type="tns:ArrayOfPhoneNumber" />
+  <xs:complexType name="PhoneNumber">
+    <xs:sequence>
+      <xs:element name="Number" nillable="true" type="xs:string" />
+      <xs:element name="Type" type="tns:PhoneType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PhoneNumber" nillable="true" type="tns:PhoneNumber" />
+  <xs:simpleType name="PhoneType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PROFESIONNAL">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HOME">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MOBILE">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PhoneType" nillable="true" type="tns:PhoneType" />
+  <xs:complexType name="DateTime">
+    <xs:sequence>
+      <xs:element name="Year" type="xs:int" />
+      <xs:element name="Month" type="xs:int" />
+      <xs:element name="Day" type="xs:int" />
+      <xs:element minOccurs="0" name="Hour" type="xs:int" />
+      <xs:element minOccurs="0" name="Minute" type="xs:int" />
+      <xs:element minOccurs="0" name="Second" type="xs:int" />
+      <xs:element minOccurs="0" name="Millisecond" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DateTime" nillable="true" type="tns:DateTime" />
+  <xs:complexType name="ListOfPerson">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PersonList" nillable="true" type="tns:ArrayOfPerson" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ListOfPerson" nillable="true" type="tns:ListOfPerson" />
+  <xs:complexType name="ArrayOfPerson">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Person" nillable="true" type="tns:Person" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPerson" nillable="true" type="tns:ArrayOfPerson" />
+</xs:schema>

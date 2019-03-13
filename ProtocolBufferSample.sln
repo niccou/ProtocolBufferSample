@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataTransferObjectLibrary", "DataTransferObjectLibrary\DataTransferObjectLibrary.csproj", "{EDDAD3AB-364B-4FA8-8268-5A630003B7D5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{F5FFBCB7-8AC6-4EF5-A0CD-3C63BFB0777C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Protogen", "Protogen", "{E4E30346-B5B1-4BF6-94C5-0048B8D737ED}"
+	ProjectSection(SolutionItems) = preProject
+		Tools\ProtoGen\common.xslt = Tools\ProtoGen\common.xslt
+		Tools\ProtoGen\csharp.xslt = Tools\ProtoGen\csharp.xslt
+		Tools\ProtoGen\descriptor.proto = Tools\ProtoGen\descriptor.proto
+		Tools\ProtoGen\Licence.txt = Tools\ProtoGen\Licence.txt
+		Tools\ProtoGen\protobuf-net.dll = Tools\ProtoGen\protobuf-net.dll
+		Tools\ProtoGen\protobuf-net.pdb = Tools\ProtoGen\protobuf-net.pdb
+		Tools\ProtoGen\protobuf-net.xml = Tools\ProtoGen\protobuf-net.xml
+		Tools\ProtoGen\protoc-license.txt = Tools\ProtoGen\protoc-license.txt
+		Tools\ProtoGen\protogen.exe = Tools\ProtoGen\protogen.exe
+		Tools\ProtoGen\protogen.exe.config = Tools\ProtoGen\protogen.exe.config
+		Tools\ProtoGen\protogen.pdb = Tools\ProtoGen\protogen.pdb
+		Tools\ProtoGen\vb.xslt = Tools\ProtoGen\vb.xslt
+		Tools\ProtoGen\xml.xslt = Tools\ProtoGen\xml.xslt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceWcf", "ServiceWcf\ServiceWcf.csproj", "{7D4F910D-24FD-442E-BAD3-3F16C7A224D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Client\Client.csproj", "{E6A871C1-A042-47D7-9860-B04F3A1EB525}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7D4F910D-24FD-442E-BAD3-3F16C7A224D5} = {7D4F910D-24FD-442E-BAD3-3F16C7A224D5}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EDDAD3AB-364B-4FA8-8268-5A630003B7D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDDAD3AB-364B-4FA8-8268-5A630003B7D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDDAD3AB-364B-4FA8-8268-5A630003B7D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDDAD3AB-364B-4FA8-8268-5A630003B7D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D4F910D-24FD-442E-BAD3-3F16C7A224D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D4F910D-24FD-442E-BAD3-3F16C7A224D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D4F910D-24FD-442E-BAD3-3F16C7A224D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D4F910D-24FD-442E-BAD3-3F16C7A224D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6A871C1-A042-47D7-9860-B04F3A1EB525}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6A871C1-A042-47D7-9860-B04F3A1EB525}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6A871C1-A042-47D7-9860-B04F3A1EB525}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6A871C1-A042-47D7-9860-B04F3A1EB525}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E4E30346-B5B1-4BF6-94C5-0048B8D737ED} = {F5FFBCB7-8AC6-4EF5-A0CD-3C63BFB0777C}
+	EndGlobalSection
+EndGlobal
